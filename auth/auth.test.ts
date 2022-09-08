@@ -4,25 +4,25 @@ import { getUserByEmail, getUserByUsername } from "./auth.service";
 
 
 // generate test cases
-describe("auth", () => {
+describe("auth services", () => {
 
   it("should return user by username", () => {
-    const user = getUserByUsername("user1");
-    expect(user).toEqual(MEMORY_DB.user1);
+    const user = getUserByUsername("test");
+    expect(user).toEqual(MEMORY_DB.test);
   });
 
   it("should return undefined if user does not exist", () => {
-    const user = getUserByUsername("user2");
+    const user = getUserByUsername("test2");
     expect(user).toBeUndefined();
   });
 
   it("should return user by email", () => {
-    const user = getUserByEmail("test1@gmail.com");
-    expect(user).toEqual(MEMORY_DB.user1);
+    const user = getUserByEmail("test@test.com");
+    expect(user).toEqual(MEMORY_DB.test);
   });
 
   it("should return undefined if user does not exist", () => {
-    const user = getUserByEmail("test2@gmail.com");
+    const user = getUserByEmail("test2@test.com");
     expect(user).toBeUndefined();
   });
 });

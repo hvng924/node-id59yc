@@ -15,12 +15,8 @@ import { Request, Response } from 'express';
 // Because we dont have a database in this environment we store the users in memory. Fill the helper functions
 // to query the memory db.
 
-app.get('/', (req: Request, res: Response) => {
-  return res.status(200).json();
-});
-
 // Request body -> UserDto
-app.get('/register', authController.register);
+app.post('/register', authController.register);
 
 // Request body -> { username: string, password: string }
 app.post('/login', authController.login);
